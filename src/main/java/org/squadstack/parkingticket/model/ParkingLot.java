@@ -24,7 +24,7 @@ public class ParkingLot {
 
     public String newCarParking(int age, String registrationNo) {
         if (emptySlots.size() == 0) return "Parking Full";
-        Integer n = emptySlots.poll();
+        int n = emptySlots.poll();
         tickets.put(n, new Ticket(age, registrationNo));
         return PARKING_OUTPUT.replace(REGISTRATION_NO_PLACEHOLDER, registrationNo).
                 replace(SLOT_NO_PLACEHOLDER, String.valueOf(n));
